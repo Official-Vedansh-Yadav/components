@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    width: 60vw;
+    margin: 20px 20vw;
+}
+
+pre{
+    max-height: 400px;
+}

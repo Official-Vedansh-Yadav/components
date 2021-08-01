@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - Vedansh Tech Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="prism/prism.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="nav-brand">Title</h1>
+        <ul class="navlist hide-navlist">
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li class="dropdown">dropdown&#9660;
+                <ul class="web-development-list">
+                    <li class="flex frontend">link&#9660;
+                        <ul class="frontend-list">
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex backend">link&#9660;
+                        <ul class="backend-list">
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">link</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>HTML</h1>
+        <pre class="language-html"><code>&lt;nav class="navbar"&gt;
+    &lt;h1 class="nav-brand"&gt;Title&lt;/h1&gt;
+    &lt;ul class="navlist hide-navlist"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="dropdown"&gt;dropdown&#9660;
+            &lt;ul class="web-development-list"&gt;
+                &lt;li class="flex frontend"&gt;link&#9660;
+                    &lt;ul class="frontend-list"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li class="flex backend"&gt;link&#9660;
+                    &lt;ul class="backend-list"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="hamburger"&gt;
+        &lt;div class="line"&gt;&lt;/div&gt;
+        &lt;div class="line"&gt;&lt;/div&gt;
+        &lt;div class="line"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+        <h1>CSS</h1>
+        <pre class="language-css"><code>.navbar{
+display: flex;
+height: 50px;
+width: 100vw;
+background: rgba(0, 0, 0, 0.5);
+color: #fff;
+padding: 10px;
+}
+.nav-brand{
+width: 40%;
+display: flex;
+align-items: center;
+}
+.navlist{
+width: 60%;
+display: flex;
+justify-content: flex-end;
+padding-right: 100px;
+}
+.navlist > li{
+padding: 10px;
+}
+.navbar li{
+list-style: none;
+cursor: pointer;
+}
+.navbar a{
+text-decoration: none;
+color: #fff;
+}
+.web-development-list{
+display: none;
+position: absolute;
+padding-top: 20px;
+transition: all 0.5s ease-in;
+}
+.dropdown:hover > .web-development-list{
+display: flex;
+flex-direction: column;
+height: 50px;
+}
+.dropdown  li{
+background: rgba(0, 0, 0, 0.5);
+width: 100px;
+padding: 10px;
+text-align: center;
+}
+.frontend-list{
+display: none;
+position: absolute;
+margin-left: 90px;
+margin-top: -10px;
+transition: all 0.5s ease-in;
+}
+.backend-list{
+display: none;
+position: absolute;
+margin-left: 90px;
+transition: all 0.5s ease-in;
+}
+.flex{
+display: flex;
+}
+.frontend:hover > .frontend-list{
+display: block;
+}
+.backend:hover > .backend-list{
+display: block;
+}
+.hamburger{
+width: 50px;
+display: none;
+cursor: pointer;
+}
+.line{
+margin: 3px;
+width: 50px;
+height: 7px;
+background: white;
+}
+@media only screen and (max-width: 700px){
+.nav-brand{
+width: 100%;
+}
+.navlist{
+flex-direction: column;
+padding-top: 20px;
+transition: all 1s ease-in-out;
+}
+.hamburger{
+display: block !important;
+position: absolute;
+top: 10px;
+right: 10px;
+}
+.navbar{
+flex-direction: column;
+}
+.web-development-list{
+display: none;
+position: relative;
+margin-bottom: 30px;
+}
+.hide-navlist{
+display: none;
+}
+.height-navbar{
+height: auto !important;
+}
+}</code></pre>
+    <h1>Javascript</h1>
+    <pre class="language-javascript"><code>document.querySelector('.hamburger').addEventListener('click',()=>{
+document.querySelector('.navlist').classList.toggle('hide-navlist');
+document.querySelector('.navbar').classList.toggle('height-navbar');
+});</code></pre>
+    </div>
+</body>
+<script src="components.js"></script>
+<script src="prism/prism.js"></script>
+</html>
